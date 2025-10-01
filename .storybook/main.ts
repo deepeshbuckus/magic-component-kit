@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@stencil/storybook-plugin';
+import type { StorybookConfig } from '@storybook/web-components-vite';
 
 const config: StorybookConfig = {
   stories: ['../packages/web-components/src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -7,10 +7,20 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
   ],
   framework: {
-    name: '@stencil/storybook-plugin',
+    name: '@storybook/web-components-vite',
+    options: {},
   },
   docs: {
     autodocs: 'tag',
+  },
+  async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
+    
+    return mergeConfig(config, {
+      build: {
+        outDir: 'dist-vite'
+      }
+    });
   },
 };
 
