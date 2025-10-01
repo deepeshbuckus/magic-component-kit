@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+.ds-progress {
+  position: relative;
+  height: 1rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-color-secondary);
+}
+
+.ds-progress-indicator {
+  height: 100%;
+  width: 100%;
+  background: var(--ds-color-primary);
+  transition: transform 0.3s ease;
+}

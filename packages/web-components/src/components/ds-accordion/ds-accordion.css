@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.ds-accordion-item {
+  border-bottom: 1px solid var(--ds-color-border);
+}
+
+.ds-accordion-trigger {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-weight: var(--ds-font-weight-medium);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: var(--ds-color-foreground);
+  transition: all var(--ds-transition-base);
+}
+
+.ds-accordion-trigger:hover {
+  text-decoration: underline;
+}
+
+.ds-accordion-icon {
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  transition: transform var(--ds-transition-base);
+}
+
+.ds-accordion-icon--open {
+  transform: rotate(180deg);
+}
+
+.ds-accordion-content {
+  overflow: hidden;
+  font-size: var(--ds-font-size-sm);
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+
+.ds-accordion-content--open {
+  max-height: 500px;
+}
+
+.ds-accordion-content-inner {
+  padding-bottom: 1rem;
+}

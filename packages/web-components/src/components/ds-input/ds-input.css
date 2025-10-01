@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.ds-input {
+  display: flex;
+  width: 100%;
+  border-radius: var(--ds-radius-md);
+  border: 1px solid var(--ds-color-input);
+  background: var(--ds-color-background);
+  padding: 0.5rem 0.75rem;
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-foreground);
+  transition: all var(--ds-transition-base);
+}
+
+.ds-input::placeholder {
+  color: var(--ds-color-muted-foreground);
+}
+
+.ds-input:focus {
+  outline: none;
+  border-color: var(--ds-color-ring);
+  box-shadow: 0 0 0 1px var(--ds-color-ring);
+}
+
+.ds-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

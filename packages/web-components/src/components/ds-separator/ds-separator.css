@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+.ds-separator {
+  flex-shrink: 0;
+  background: var(--ds-color-border);
+}
+
+.ds-separator--horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.ds-separator--vertical {
+  width: 1px;
+  height: 100%;
+}

@@ -1,0 +1,33 @@
+:host {
+  display: block;
+}
+
+.ds-alert {
+  position: relative;
+  width: 100%;
+  border-radius: var(--ds-radius-lg);
+  border: 1px solid var(--ds-color-border);
+  padding: 1rem;
+}
+
+.ds-alert--default {
+  background: var(--ds-color-background);
+  color: var(--ds-color-foreground);
+}
+
+.ds-alert--destructive {
+  border-color: hsl(0, 84.2%, 60.2%, 0.5);
+  color: var(--ds-color-destructive);
+}
+
+.ds-alert-title {
+  margin: 0 0 0.25rem 0;
+  font-weight: var(--ds-font-weight-medium);
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.ds-alert-description {
+  font-size: var(--ds-font-size-sm);
+  line-height: 1.5;
+}
