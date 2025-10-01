@@ -48,6 +48,8 @@ export class DsButton {
     const hostStyle: any = {};
     if (this.color) {
       hostStyle['--custom-bg-color'] = this.color;
+      console.log('Button color prop:', this.color);
+      console.log('Setting --custom-bg-color to:', this.color);
     }
     
     const buttonStyle: any = {};
