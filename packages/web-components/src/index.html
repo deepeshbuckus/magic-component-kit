@@ -172,5 +172,48 @@
         <ds-skeleton style="width: 80%; height: 20px;"></ds-skeleton>
       </div>
     </section>
+
+    <section>
+      <h2>Search Bar</h2>
+      <div style="max-width: 600px;">
+        <ds-search-bar placeholder="Ask for a custom payroll report"></ds-search-bar>
+      </div>
+    </section>
+
+    <section>
+      <h2>Category Pills</h2>
+      <div class="component-grid">
+        <ds-category-pill>Payroll Insights</ds-category-pill>
+        <ds-category-pill active>Workforce Reports</ds-category-pill>
+        <ds-category-pill>Trend Analysis</ds-category-pill>
+      </div>
+    </section>
+
+    <section>
+      <h2>Report Cards</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <ds-report-card 
+          title="Q4 Payroll Summary Report"
+          last-run="01/18/2024"
+          description="Comprehensive quarterly payroll analysis including salary distributions, overtime costs, and tax withholdings."
+        >
+          <div slot="actions" style="display: flex; gap: 0.5rem;">
+            <ds-button variant="outline" style="flex: 1;">Edit report</ds-button>
+            <ds-button style="flex: 1;">Run report</ds-button>
+          </div>
+        </ds-report-card>
+
+        <ds-report-card 
+          title="Employee Benefits Analysis"
+          last-run="01/16/2024"
+          description="Detailed breakdown of healthcare, retirement contributions, and other employee benefits costs."
+        >
+          <div slot="actions" style="display: flex; gap: 0.5rem;">
+            <ds-button variant="outline" style="flex: 1;">Edit report</ds-button>
+            <ds-button style="flex: 1;">Run report</ds-button>
+          </div>
+        </ds-report-card>
+      </div>
+    </section>
   </body>
 </html>
