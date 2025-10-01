@@ -14,6 +14,12 @@ const meta: Meta = {
     description: {
       control: { type: 'text' },
     },
+    border: {
+      control: { type: 'text' },
+    },
+    borderRadius: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -95,6 +101,49 @@ export const Grid: Story = {
         title="Monthly Attendance Report"
         last-run="01/14/2024"
         description="Analysis of employee attendance patterns, PTO usage, and overtime trends across departments."
+      >
+        <div slot="actions" style="display: flex; gap: 0.5rem;">
+          <ds-button variant="outline" style="flex: 1;">Edit</ds-button>
+          <ds-button style="flex: 1;">Run</ds-button>
+        </div>
+      </ds-report-card>
+    </div>
+  `,
+};
+
+export const CustomStyles: Story = {
+  render: () => html`
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px;">
+      <ds-report-card 
+        title="Blue Border Report"
+        last-run="01/18/2024"
+        description="Report with custom border styling."
+        border="2px solid hsl(200, 100%, 50%)"
+      >
+        <div slot="actions" style="display: flex; gap: 0.5rem;">
+          <ds-button variant="outline" style="flex: 1;">Edit</ds-button>
+          <ds-button style="flex: 1;">Run</ds-button>
+        </div>
+      </ds-report-card>
+
+      <ds-report-card 
+        title="Rounded Report"
+        last-run="01/16/2024"
+        description="Report with custom border radius."
+        borderRadius="20px"
+      >
+        <div slot="actions" style="display: flex; gap: 0.5rem;">
+          <ds-button variant="outline" style="flex: 1;">Edit</ds-button>
+          <ds-button style="flex: 1;">Run</ds-button>
+        </div>
+      </ds-report-card>
+
+      <ds-report-card 
+        title="Combined Styles Report"
+        last-run="01/14/2024"
+        description="Report with combined custom styles."
+        border="2px solid hsl(150, 60%, 45%)"
+        borderRadius="12px"
       >
         <div slot="actions" style="display: flex; gap: 0.5rem;">
           <ds-button variant="outline" style="flex: 1;">Edit</ds-button>

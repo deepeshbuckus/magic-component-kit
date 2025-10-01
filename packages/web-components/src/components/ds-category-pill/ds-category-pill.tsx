@@ -10,6 +10,21 @@ export class DsCategoryPill {
   @Prop() disabled: boolean = false;
   @Prop() iconName?: string;
 
+  /**
+   * Custom color override (HSL value)
+   */
+  @Prop() color?: string;
+
+  /**
+   * Custom border override (e.g., "2px solid hsl(200, 100%, 50%)")
+   */
+  @Prop() border?: string;
+
+  /**
+   * Custom border radius override (e.g., "8px", "1rem")
+   */
+  @Prop() borderRadius?: string;
+
   @Event() dsClick: EventEmitter<void>;
 
   handleClick = () => {
@@ -26,6 +41,11 @@ export class DsCategoryPill {
   };
 
   render() {
+    const style: any = {};
+    if (this.color) style['--ds-color-primary'] = this.color;
+    if (this.border) style['border'] = this.border;
+    if (this.borderRadius) style['border-radius'] = this.borderRadius;
+
     return (
       <button
         class={{
@@ -39,6 +59,7 @@ export class DsCategoryPill {
         role="button"
         aria-pressed={this.active ? 'true' : 'false'}
         tabindex={this.disabled ? -1 : 0}
+        style={style}
       >
         <slot name="icon"></slot>
         <span class="ds-category-pill__text">

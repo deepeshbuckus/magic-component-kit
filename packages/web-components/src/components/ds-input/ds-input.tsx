@@ -13,6 +13,16 @@ export class DsInput {
   @Prop() required: boolean = false;
   @Prop() name: string = '';
 
+  /**
+   * Custom border override (e.g., "2px solid hsl(200, 100%, 50%)")
+   */
+  @Prop() border?: string;
+
+  /**
+   * Custom border radius override (e.g., "8px", "1rem")
+   */
+  @Prop() borderRadius?: string;
+
   @Event() dsInput: EventEmitter<string>;
   @Event() dsChange: EventEmitter<string>;
 
@@ -27,6 +37,10 @@ export class DsInput {
   };
 
   render() {
+    const style: any = {};
+    if (this.border) style['border'] = this.border;
+    if (this.borderRadius) style['border-radius'] = this.borderRadius;
+
     return (
       <Host>
         <input
@@ -39,6 +53,7 @@ export class DsInput {
           name={this.name}
           onInput={this.handleInput}
           onChange={this.handleChange}
+          style={style}
         />
       </Host>
     );

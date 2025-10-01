@@ -12,6 +12,12 @@ const meta: Meta = {
     disabled: {
       control: { type: 'boolean' },
     },
+    border: {
+      control: { type: 'text' },
+    },
+    borderRadius: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -61,6 +67,26 @@ export const Types: Story = {
         <ds-label>Number</ds-label>
         <ds-input type="number" placeholder="123"></ds-input>
       </div>
+    </div>
+  `,
+};
+
+export const CustomStyles: Story = {
+  render: () => html`
+    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 300px;">
+      <ds-input 
+        placeholder="Thick border" 
+        border="2px solid hsl(200, 100%, 50%)"
+      ></ds-input>
+      <ds-input 
+        placeholder="Rounded corners" 
+        borderRadius="12px"
+      ></ds-input>
+      <ds-input 
+        placeholder="Combined styles" 
+        border="2px solid hsl(150, 60%, 45%)"
+        borderRadius="20px"
+      ></ds-input>
     </div>
   `,
 };

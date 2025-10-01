@@ -11,6 +11,12 @@ const meta: Meta = {
     disabled: {
       control: { type: 'boolean' },
     },
+    border: {
+      control: { type: 'text' },
+    },
+    borderRadius: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -46,6 +52,26 @@ export const Interactive: Story = {
         placeholder="Type and press Enter or click send"
         @dsSubmit="${(e: CustomEvent) => alert('Submitted: ' + e.detail)}"
         @dsChange="${(e: CustomEvent) => console.log('Changed: ' + e.detail)}"
+      ></ds-search-bar>
+    </div>
+  `,
+};
+
+export const CustomStyles: Story = {
+  render: () => html`
+    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 600px;">
+      <ds-search-bar 
+        placeholder="Thick border search"
+        border="2px solid hsl(200, 100%, 50%)"
+      ></ds-search-bar>
+      <ds-search-bar 
+        placeholder="Rounded search"
+        borderRadius="20px"
+      ></ds-search-bar>
+      <ds-search-bar 
+        placeholder="Combined styles"
+        border="2px solid hsl(150, 60%, 45%)"
+        borderRadius="16px"
       ></ds-search-bar>
     </div>
   `,

@@ -4,6 +4,14 @@ import { html } from 'lit-html';
 const meta: Meta = {
   title: 'Components/Card',
   tags: ['autodocs'],
+  argTypes: {
+    border: {
+      control: { type: 'text' },
+    },
+    borderRadius: {
+      control: { type: 'text' },
+    },
+  },
 };
 
 export default meta;
@@ -70,6 +78,42 @@ export const Multiple: Story = {
         </ds-card-header>
         <ds-card-content>
           <p>Content for the third feature card.</p>
+        </ds-card-content>
+      </ds-card>
+    </div>
+  `,
+};
+
+export const CustomStyles: Story = {
+  render: () => html`
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+      <ds-card border="2px solid hsl(200, 100%, 50%)">
+        <ds-card-header>
+          <ds-card-title>Blue Border</ds-card-title>
+        </ds-card-header>
+        <ds-card-content>
+          <p>Card with custom border.</p>
+        </ds-card-content>
+      </ds-card>
+      
+      <ds-card borderRadius="20px">
+        <ds-card-header>
+          <ds-card-title>Rounded</ds-card-title>
+        </ds-card-header>
+        <ds-card-content>
+          <p>Card with custom border radius.</p>
+        </ds-card-content>
+      </ds-card>
+      
+      <ds-card 
+        border="2px solid hsl(150, 60%, 45%)"
+        borderRadius="12px"
+      >
+        <ds-card-header>
+          <ds-card-title>Combined</ds-card-title>
+        </ds-card-header>
+        <ds-card-content>
+          <p>Card with combined styles.</p>
         </ds-card-content>
       </ds-card>
     </div>
