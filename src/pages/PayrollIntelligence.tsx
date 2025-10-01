@@ -80,22 +80,34 @@ const PayrollIntelligence = () => {
             {/* Category Pills */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
               <Badge 
-                variant="default" 
                 className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full"
+                style={{ 
+                  backgroundColor: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 95%)'
+                }}
               >
                 <DollarSign className="h-4 w-4" />
                 Payroll Insights
               </Badge>
               <Badge 
-                variant="secondary" 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity"
+                style={{ 
+                  backgroundColor: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 95%)'
+                }}
               >
                 <Users className="h-4 w-4" />
                 Workforce Reports
               </Badge>
               <Badge 
-                variant="secondary" 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity"
+                style={{ 
+                  backgroundColor: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 95%)'
+                }}
               >
                 <TrendingUp className="h-4 w-4" />
                 Trend Analysis

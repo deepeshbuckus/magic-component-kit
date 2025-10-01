@@ -16,6 +16,11 @@ export class DsCategoryPill {
   @Prop() color?: string;
 
   /**
+   * Custom text color override (HSL value)
+   */
+  @Prop() textColor?: string;
+
+  /**
    * Custom border override (e.g., "2px solid hsl(200, 100%, 50%)")
    */
   @Prop() border?: string;
@@ -44,6 +49,9 @@ export class DsCategoryPill {
     const hostStyle: any = {};
     if (this.color) {
       hostStyle['--custom-bg-color'] = this.color;
+    }
+    if (this.textColor) {
+      hostStyle['--custom-text-color'] = this.textColor;
     }
     
     const buttonStyle: any = {};

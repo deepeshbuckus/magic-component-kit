@@ -26,6 +26,11 @@
   --ds-color-input: hsl(214.3, 31.8%, 91.4%);
   --ds-color-ring: hsl(222.2, 84%, 4.9%);
   
+  /* Blue Variant */
+  --ds-color-blue-light: hsl(210, 100%, 95%);
+  --ds-color-blue: hsl(210, 100%, 40%);
+  --ds-color-blue-foreground: hsl(210, 100%, 40%);
+  
   /* Spacing */
   --ds-spacing-xs: 0.25rem;
   --ds-spacing-sm: 0.5rem;

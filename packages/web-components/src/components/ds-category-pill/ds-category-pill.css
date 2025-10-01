@@ -7,10 +7,10 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--ds-color-border);
+  border: 1px solid var(--custom-bg-color, var(--ds-color-border));
   border-radius: var(--ds-radius-full);
   background: var(--custom-bg-color, var(--ds-color-secondary));
-  color: var(--ds-color-secondary-foreground);
+  color: var(--custom-text-color, var(--ds-color-secondary-foreground));
   font-size: var(--ds-font-size-sm);
   font-weight: var(--ds-font-weight-medium);
   cursor: pointer;
