@@ -7,6 +7,13 @@ type StencilToReact<T> = {
   };
 };
 
+// Extend React types to allow 'slot' attribute on all elements
+declare module 'react' {
+  interface HTMLAttributes<T> {
+    slot?: string;
+  }
+}
+
 declare global {
   export namespace JSX {
     interface IntrinsicElements extends StencilToReact<LocalJSX.IntrinsicElements> {

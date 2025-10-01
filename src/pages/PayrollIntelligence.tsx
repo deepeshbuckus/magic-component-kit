@@ -80,36 +80,39 @@ const PayrollIntelligence = () => {
             {/* Category Pills */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
               <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full"
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
                 style={{ 
                   backgroundColor: 'hsl(210, 100%, 95%)', 
                   color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 95%)'
+                  border: '1px solid hsl(210, 100%, 90%)',
+                  fontWeight: 500
                 }}
               >
-                <DollarSign className="h-4 w-4" />
+                <DollarSign className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
                 Payroll Insights
               </Badge>
               <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity"
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
                 style={{ 
                   backgroundColor: 'hsl(210, 100%, 95%)', 
                   color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 95%)'
+                  border: '1px solid hsl(210, 100%, 90%)',
+                  fontWeight: 500
                 }}
               >
-                <Users className="h-4 w-4" />
+                <Users className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
                 Workforce Reports
               </Badge>
               <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:opacity-80 transition-opacity"
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
                 style={{ 
                   backgroundColor: 'hsl(210, 100%, 95%)', 
                   color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 95%)'
+                  border: '1px solid hsl(210, 100%, 90%)',
+                  fontWeight: 500
                 }}
               >
-                <TrendingUp className="h-4 w-4" />
+                <TrendingUp className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
                 Trend Analysis
               </Badge>
             </div>
