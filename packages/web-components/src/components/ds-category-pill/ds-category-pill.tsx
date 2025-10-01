@@ -1,4 +1,4 @@
-import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Host, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'ds-category-pill',
@@ -41,34 +41,37 @@ export class DsCategoryPill {
   };
 
   render() {
-    const style: any = {};
+    const hostStyle: any = {};
     if (this.color) {
-      style['background'] = `${this.color} !important`;
-      style['background-color'] = `${this.color} !important`;
+      hostStyle['--custom-bg-color'] = this.color;
     }
-    if (this.border) style['border'] = this.border;
-    if (this.borderRadius) style['border-radius'] = this.borderRadius;
+    
+    const buttonStyle: any = {};
+    if (this.border) buttonStyle['border'] = this.border;
+    if (this.borderRadius) buttonStyle['border-radius'] = this.borderRadius;
 
     return (
-      <button
-        class={{
-          'ds-category-pill': true,
-          'ds-category-pill--active': this.active,
-          'ds-category-pill--disabled': this.disabled,
-        }}
-        onClick={this.handleClick}
-        onKeyDown={this.handleKeyDown}
-        disabled={this.disabled}
-        role="button"
-        aria-pressed={this.active ? 'true' : 'false'}
-        tabindex={this.disabled ? -1 : 0}
-        style={style}
-      >
-        <slot name="icon"></slot>
-        <span class="ds-category-pill__text">
-          <slot></slot>
-        </span>
-      </button>
+      <Host style={hostStyle}>
+        <button
+          class={{
+            'ds-category-pill': true,
+            'ds-category-pill--active': this.active,
+            'ds-category-pill--disabled': this.disabled,
+          }}
+          onClick={this.handleClick}
+          onKeyDown={this.handleKeyDown}
+          disabled={this.disabled}
+          role="button"
+          aria-pressed={this.active ? 'true' : 'false'}
+          tabindex={this.disabled ? -1 : 0}
+          style={buttonStyle}
+        >
+          <slot name="icon"></slot>
+          <span class="ds-category-pill__text">
+            <slot></slot>
+          </span>
+        </button>
+      </Host>
     );
   }
 }

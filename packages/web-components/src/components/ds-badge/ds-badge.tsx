@@ -29,22 +29,23 @@ export class DsBadge {
   @Prop() borderRadius?: string;
 
   render() {
-    const style: any = {};
+    const hostStyle: any = {};
     if (this.color) {
-      style['background'] = `${this.color} !important`;
-      style['background-color'] = `${this.color} !important`;
+      hostStyle['--custom-bg-color'] = this.color;
     }
-    if (this.border) style['border'] = this.border;
-    if (this.borderRadius) style['border-radius'] = this.borderRadius;
+    
+    const badgeStyle: any = {};
+    if (this.border) badgeStyle['border'] = this.border;
+    if (this.borderRadius) badgeStyle['border-radius'] = this.borderRadius;
 
     return (
-      <Host>
+      <Host style={hostStyle}>
         <div
           class={{
             'ds-badge': true,
             [`ds-badge--${this.variant}`]: true,
           }}
-          style={style}
+          style={badgeStyle}
         >
           <slot></slot>
         </div>

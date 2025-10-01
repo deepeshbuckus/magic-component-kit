@@ -45,16 +45,17 @@ export class DsButton {
   @Prop() borderRadius?: string;
 
   render() {
-    const style: any = {};
+    const hostStyle: any = {};
     if (this.color) {
-      style['background'] = `${this.color} !important`;
-      style['background-color'] = `${this.color} !important`;
+      hostStyle['--custom-bg-color'] = this.color;
     }
-    if (this.border) style['border'] = this.border;
-    if (this.borderRadius) style['border-radius'] = this.borderRadius;
+    
+    const buttonStyle: any = {};
+    if (this.border) buttonStyle['border'] = this.border;
+    if (this.borderRadius) buttonStyle['border-radius'] = this.borderRadius;
     
     return (
-      <Host>
+      <Host style={hostStyle}>
         <button
           class={{
             'ds-button': true,
@@ -63,7 +64,7 @@ export class DsButton {
           }}
           disabled={this.disabled}
           type={this.type}
-          style={style}
+          style={buttonStyle}
         >
           <slot></slot>
         </button>
