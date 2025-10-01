@@ -79,15 +79,39 @@ const PayrollIntelligence = () => {
 
             {/* Category Pills */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
-              <Badge variant="secondary" className="cursor-pointer px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground">
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer px-4 py-2 text-sm"
+                style={{ 
+                  background: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 90%)'
+                }}
+              >
                 <DollarSign className="mr-2 h-4 w-4" />
                 Payroll Insights
               </Badge>
-              <Badge variant="secondary" className="cursor-pointer px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground">
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer px-4 py-2 text-sm"
+                style={{ 
+                  background: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 90%)'
+                }}
+              >
                 <Users className="mr-2 h-4 w-4" />
                 Workforce Reports
               </Badge>
-              <Badge variant="secondary" className="cursor-pointer px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground">
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer px-4 py-2 text-sm"
+                style={{ 
+                  background: 'hsl(210, 100%, 95%)', 
+                  color: 'hsl(210, 100%, 40%)',
+                  border: '1px solid hsl(210, 100%, 90%)'
+                }}
+              >
                 <TrendingUp className="mr-2 h-4 w-4" />
                 Trend Analysis
               </Badge>
