@@ -42,7 +42,7 @@ export class DsCategoryPill {
 
   render() {
     const style: any = {};
-    if (this.color) style['--ds-color-primary'] = this.color;
+    if (this.color) style['background'] = this.color;
     if (this.border) style['border'] = this.border;
     if (this.borderRadius) style['border-radius'] = this.borderRadius;
 
