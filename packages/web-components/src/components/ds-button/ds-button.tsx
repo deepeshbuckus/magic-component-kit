@@ -29,7 +29,14 @@ export class DsButton {
    */
   @Prop() type: 'button' | 'submit' | 'reset' = 'button';
 
+  /**
+   * Custom color override (HSL value)
+   */
+  @Prop() color?: string;
+
   render() {
+    const style = this.color ? { '--ds-color-primary': this.color } : {};
+    
     return (
       <Host>
         <button
@@ -40,6 +47,7 @@ export class DsButton {
           }}
           disabled={this.disabled}
           type={this.type}
+          style={style}
         >
           <slot></slot>
         </button>

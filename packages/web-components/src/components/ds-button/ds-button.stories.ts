@@ -16,6 +16,9 @@ const meta: Meta = {
     disabled: {
       control: { type: 'boolean' },
     },
+    color: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -69,6 +72,17 @@ export const Disabled: Story = {
       <ds-button disabled>Disabled Default</ds-button>
       <ds-button variant="destructive" disabled>Disabled Destructive</ds-button>
       <ds-button variant="outline" disabled>Disabled Outline</ds-button>
+    </div>
+  `,
+};
+
+export const CustomColors: Story = {
+  render: () => html`
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <ds-button color="hsl(200, 100%, 50%)">Blue Button</ds-button>
+      <ds-button color="hsl(150, 60%, 45%)">Green Button</ds-button>
+      <ds-button color="hsl(280, 70%, 55%)">Purple Button</ds-button>
+      <ds-button color="hsl(30, 100%, 50%)">Orange Button</ds-button>
     </div>
   `,
 };
