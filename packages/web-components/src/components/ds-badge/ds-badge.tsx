@@ -31,8 +31,8 @@ export class DsBadge {
   render() {
     const style: any = {};
     if (this.color) {
-      style['background'] = this.color;
-      style['background-color'] = this.color;
+      style['background'] = `${this.color} !important`;
+      style['background-color'] = `${this.color} !important`;
     }
     if (this.border) style['border'] = this.border;
     if (this.borderRadius) style['border-radius'] = this.borderRadius;
