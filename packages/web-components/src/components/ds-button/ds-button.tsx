@@ -46,7 +46,10 @@ export class DsButton {
 
   render() {
     const style: any = {};
-    if (this.color) style['--button-bg-color'] = this.color;
+    if (this.color) {
+      style['background'] = this.color;
+      style['background-color'] = this.color;
+    }
     if (this.border) style['border'] = this.border;
     if (this.borderRadius) style['border-radius'] = this.borderRadius;
     
