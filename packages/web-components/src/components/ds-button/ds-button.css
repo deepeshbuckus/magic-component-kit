@@ -28,24 +28,24 @@
 }
 
 /* Sizes */
-.ds-button--default {
+.ds-button--size-default {
   height: 2.5rem;
   padding: 0.5rem 1rem;
 }
 
-.ds-button--sm {
+.ds-button--size-sm {
   height: 2.25rem;
   border-radius: var(--ds-radius-md);
   padding: 0 0.75rem;
 }
 
-.ds-button--lg {
+.ds-button--size-lg {
   height: 2.75rem;
   border-radius: var(--ds-radius-md);
   padding: 0 2rem;
 }
 
-.ds-button--icon {
+.ds-button--size-icon {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0;

@@ -56,7 +56,7 @@ export class DsButton {
           class={{
             'ds-button': true,
             [`ds-button--${this.variant}`]: true,
-            [`ds-button--${this.size}`]: true,
+            [`ds-button--size-${this.size}`]: true,
           }}
           disabled={this.disabled}
           type={this.type}
