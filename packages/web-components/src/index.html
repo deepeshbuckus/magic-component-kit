@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Design System Components</title>
+    <script type="module" src="/build/design-system.esm.js"></script>
+    <script nomodule src="/build/design-system.js"></script>
+  </head>
+  <body>
+    <div style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+      <h1>Design System Web Components</h1>
+      
+      <section style="margin: 2rem 0;">
+        <h2>Buttons</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+          <ds-button>Default</ds-button>
+          <ds-button variant="destructive">Destructive</ds-button>
+          <ds-button variant="outline">Outline</ds-button>
+          <ds-button variant="secondary">Secondary</ds-button>
+          <ds-button variant="ghost">Ghost</ds-button>
+          <ds-button variant="link">Link</ds-button>
+        </div>
+      </section>
+
+      <section style="margin: 2rem 0;">
+        <h2>Badges</h2>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+          <ds-badge>Default</ds-badge>
+          <ds-badge variant="secondary">Secondary</ds-badge>
+          <ds-badge variant="destructive">Destructive</ds-badge>
+          <ds-badge variant="outline">Outline</ds-badge>
+        </div>
+      </section>
+
+      <section style="margin: 2rem 0;">
+        <h2>Card</h2>
+        <ds-card style="max-width: 400px;">
+          <ds-card-header>
+            <ds-card-title>Card Title</ds-card-title>
+            <ds-card-description>Card Description</ds-card-description>
+          </ds-card-header>
+          <ds-card-content>
+            <p>Card content goes here. This is a reusable card component.</p>
+          </ds-card-content>
+          <ds-card-footer>
+            <ds-button>Action</ds-button>
+          </ds-card-footer>
+        </ds-card>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+:host {
+  display: inline-block;
+}
+
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: var(--ds-radius-md);
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-medium);
+  transition: all var(--ds-transition-base);
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.ds-button:focus-visible {
+  outline: 2px solid var(--ds-color-ring);
+  outline-offset: 2px;
+}
+
+.ds-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Sizes */
+.ds-button--default {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.ds-button--sm {
+  height: 2.25rem;
+  border-radius: var(--ds-radius-md);
+  padding: 0 0.75rem;
+}
+
+.ds-button--lg {
+  height: 2.75rem;
+  border-radius: var(--ds-radius-md);
+  padding: 0 2rem;
+}
+
+.ds-button--icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0;
+}
+
+/* Variants */
+.ds-button--default {
+  background: var(--ds-color-primary);
+  color: var(--ds-color-primary-foreground);
+}
+
+.ds-button--default:hover:not(:disabled) {
+  background: var(--ds-color-primary);
+  opacity: 0.9;
+}
+
+.ds-button--destructive {
+  background: var(--ds-color-destructive);
+  color: var(--ds-color-destructive-foreground);
+}
+
+.ds-button--destructive:hover:not(:disabled) {
+  background: var(--ds-color-destructive);
+  opacity: 0.9;
+}
+
+.ds-button--outline {
+  border: 1px solid var(--ds-color-input);
+  background: var(--ds-color-background);
+  color: var(--ds-color-foreground);
+}
+
+.ds-button--outline:hover:not(:disabled) {
+  background: var(--ds-color-accent);
+  color: var(--ds-color-accent-foreground);
+}
+
+.ds-button--secondary {
+  background: var(--ds-color-secondary);
+  color: var(--ds-color-secondary-foreground);
+}
+
+.ds-button--secondary:hover:not(:disabled) {
+  background: var(--ds-color-secondary);
+  opacity: 0.8;
+}
+
+.ds-button--ghost {
+  background: transparent;
+  color: var(--ds-color-foreground);
+}
+
+.ds-button--ghost:hover:not(:disabled) {
+  background: var(--ds-color-accent);
+  color: var(--ds-color-accent-foreground);
+}
+
+.ds-button--link {
+  background: transparent;
+  color: var(--ds-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ds-button--link:hover:not(:disabled) {
+  text-decoration: underline;
+}

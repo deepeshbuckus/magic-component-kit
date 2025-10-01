@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.ds-card {
+  border-radius: var(--ds-radius-lg);
+  border: 1px solid var(--ds-color-border);
+  background: var(--ds-color-card);
+  color: var(--ds-color-card-foreground);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.ds-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.5rem;
+}
+
+.ds-card-title {
+  font-size: var(--ds-font-size-2xl);
+  font-weight: var(--ds-font-weight-semibold);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.ds-card-description {
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-muted-foreground);
+  margin: 0;
+}
+
+.ds-card-content {
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.ds-card-footer {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  padding-top: 0;
+}
