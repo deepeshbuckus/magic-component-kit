@@ -9,7 +9,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--ds-color-border);
   border-radius: var(--ds-radius-full);
-  background: var(--ds-color-secondary);
+  background: var(--pill-bg-color, var(--ds-color-secondary));
   color: var(--ds-color-secondary-foreground);
   font-size: var(--ds-font-size-sm);
   font-weight: var(--ds-font-weight-medium);
@@ -19,9 +19,9 @@
 }
 
 .ds-category-pill:hover:not(.ds-category-pill--disabled) {
-  background: var(--ds-color-primary);
+  background: var(--pill-bg-color, var(--ds-color-primary));
   color: var(--ds-color-primary-foreground);
-  border-color: var(--ds-color-primary);
+  border-color: var(--pill-bg-color, var(--ds-color-primary));
 }
 
 .ds-category-pill:focus-visible {
@@ -30,9 +30,9 @@
 }
 
 .ds-category-pill--active {
-  background: var(--ds-color-primary);
+  background: var(--pill-bg-color, var(--ds-color-primary));
   color: var(--ds-color-primary-foreground);
-  border-color: var(--ds-color-primary);
+  border-color: var(--pill-bg-color, var(--ds-color-primary));
 }
 
 .ds-category-pill--disabled {

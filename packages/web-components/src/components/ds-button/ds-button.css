@@ -53,12 +53,12 @@
 
 /* Variants */
 .ds-button--default {
-  background: var(--ds-color-primary);
+  background: var(--button-bg-color, var(--ds-color-primary));
   color: var(--ds-color-primary-foreground);
 }
 
 .ds-button--default:hover:not(:disabled) {
-  background: var(--ds-color-primary);
+  background: var(--button-bg-color, var(--ds-color-primary));
   opacity: 0.9;
 }
 

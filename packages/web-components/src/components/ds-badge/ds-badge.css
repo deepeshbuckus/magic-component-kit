@@ -20,12 +20,12 @@
 
 .ds-badge--default {
   border-color: transparent;
-  background: var(--ds-color-primary);
+  background: var(--badge-bg-color, var(--ds-color-primary));
   color: var(--ds-color-primary-foreground);
 }
 
 .ds-badge--default:hover {
-  background: var(--ds-color-primary);
+  background: var(--badge-bg-color, var(--ds-color-primary));
   opacity: 0.8;
 }
 
