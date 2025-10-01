@@ -78,25 +78,28 @@ const PayrollIntelligence = () => {
             </p>
 
             {/* Category Pills */}
-            <div className="mb-8 flex flex-wrap items-center justify-center gap-6">
-              <div className="flex items-center justify-center space-x-3 cursor-pointer">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <DollarSign className="w-4 h-4 text-blue-600" />
-                </div>
-                <span className="text-gray-800">Payroll Insights</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3 cursor-pointer">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <Users className="w-4 h-4 text-blue-600" />
-                </div>
-                <span className="text-gray-800">Workforce Reports</span>
-              </div>
-              <div className="flex items-center justify-center space-x-3 cursor-pointer">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
-                  <TrendingUp className="w-4 h-4 text-blue-600" />
-                </div>
-                <span className="text-gray-800">Trend Analysis</span>
-              </div>
+            <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
+              <Badge 
+                variant="default" 
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full"
+              >
+                <DollarSign className="h-4 w-4" />
+                Payroll Insights
+              </Badge>
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Users className="h-4 w-4" />
+                Workforce Reports
+              </Badge>
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <TrendingUp className="h-4 w-4" />
+                Trend Analysis
+              </Badge>
             </div>
 
             {/* Search Bar */}
