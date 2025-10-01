@@ -1,19 +1,18 @@
 import { Component, h, Host } from '@stencil/core';
 
 @Component({
-  tag: 'ds-card',
-  styleUrl: 'ds-card.css',
+  tag: 'ds-alert-description',
+  styleUrl: 'ds-alert.css',
   shadow: true,
 })
-export class DsCard {
+export class DsAlertDescription {
   render() {
     return (
       <Host>
-        <div class="ds-card">
+        <div class="ds-alert-description">
           <slot></slot>
         </div>
       </Host>
     );
   }
 }
-

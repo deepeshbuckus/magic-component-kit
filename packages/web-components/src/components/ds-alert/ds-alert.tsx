@@ -1,6 +1,5 @@
 import { Component, Prop, h, Host } from '@stencil/core';
-
-export type AlertVariant = 'default' | 'destructive';
+import { AlertVariant } from './alert-types';
 
 @Component({
   tag: 'ds-alert',
@@ -21,36 +20,3 @@ export class DsAlert {
   }
 }
 
-@Component({
-  tag: 'ds-alert-title',
-  styleUrl: 'ds-alert.css',
-  shadow: true,
-})
-export class DsAlertTitle {
-  render() {
-    return (
-      <Host>
-        <h5 class="ds-alert-title">
-          <slot></slot>
-        </h5>
-      </Host>
-    );
-  }
-}
-
-@Component({
-  tag: 'ds-alert-description',
-  styleUrl: 'ds-alert.css',
-  shadow: true,
-})
-export class DsAlertDescription {
-  render() {
-    return (
-      <Host>
-        <div class="ds-alert-description">
-          <slot></slot>
-        </div>
-      </Host>
-    );
-  }
-}
