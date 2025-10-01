@@ -30,7 +30,7 @@ export class DsBadge {
 
   render() {
     const style: any = {};
-    if (this.color) style['background'] = this.color;
+    if (this.color) style['background'] = `${this.color} !important`;
     if (this.border) style['border'] = this.border;
     if (this.borderRadius) style['border-radius'] = this.borderRadius;
 
