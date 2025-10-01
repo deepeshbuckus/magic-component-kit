@@ -19,6 +19,12 @@ const meta: Meta = {
     color: {
       control: { type: 'text' },
     },
+    border: {
+      control: { type: 'text' },
+    },
+    borderRadius: {
+      control: { type: 'text' },
+    },
   },
 };
 
@@ -83,6 +89,25 @@ export const CustomColors: Story = {
       <ds-button color="hsl(150, 60%, 45%)">Green Button</ds-button>
       <ds-button color="hsl(280, 70%, 55%)">Purple Button</ds-button>
       <ds-button color="hsl(30, 100%, 50%)">Orange Button</ds-button>
+    </div>
+  `,
+};
+
+export const CustomBorders: Story = {
+  render: () => html`
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+      <ds-button border="2px solid hsl(200, 100%, 50%)" variant="outline">Thick Border</ds-button>
+      <ds-button border="2px dashed hsl(150, 60%, 45%)" variant="outline">Dashed Border</ds-button>
+      <ds-button border="3px dotted hsl(280, 70%, 55%)" variant="outline">Dotted Border</ds-button>
+      <ds-button borderRadius="20px">Rounded</ds-button>
+      <ds-button borderRadius="0">Square</ds-button>
+      <ds-button 
+        color="hsl(200, 100%, 50%)" 
+        border="2px solid hsl(200, 100%, 70%)" 
+        borderRadius="12px"
+      >
+        Combined
+      </ds-button>
     </div>
   `,
 };
