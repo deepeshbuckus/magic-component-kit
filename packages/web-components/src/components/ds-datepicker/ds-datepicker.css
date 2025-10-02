@@ -1,0 +1,77 @@
+:host {
+  display: inline-block;
+  font-family: var(--ds-font-family-sans, system-ui, -apple-system, sans-serif);
+}
+
+.datepicker-container {
+  position: relative;
+}
+
+.datepicker-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  width: 100%;
+  min-width: 240px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ds-color-border, hsl(240, 5.9%, 90%));
+  border-radius: var(--ds-radius-md, 0.5rem);
+  background: var(--ds-color-background, hsl(0, 0%, 100%));
+  color: var(--ds-color-foreground, hsl(240, 10%, 3.9%));
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.datepicker-trigger:hover:not(:disabled) {
+  background: var(--ds-color-accent, hsl(240, 4.8%, 95.9%));
+}
+
+.datepicker-trigger:focus-visible {
+  outline: none;
+  ring: 2px solid var(--ds-color-ring, hsl(240, 5%, 64.9%));
+  ring-offset: 2px;
+}
+
+.datepicker-trigger.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.datepicker-trigger:not(.has-value) .datepicker-text {
+  color: var(--ds-color-muted-foreground, hsl(240, 3.8%, 46.1%));
+}
+
+.calendar-icon {
+  flex-shrink: 0;
+  color: var(--ds-color-muted-foreground, hsl(240, 3.8%, 46.1%));
+}
+
+.datepicker-text {
+  flex: 1;
+}
+
+.datepicker-popover {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  z-index: 50;
+  background: var(--ds-color-background, hsl(0, 0%, 100%));
+  border-radius: var(--ds-radius-md, 0.5rem);
+  box-shadow: var(--ds-shadow-lg, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1));
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

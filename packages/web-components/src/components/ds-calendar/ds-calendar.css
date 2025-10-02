@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  font-family: var(--ds-font-family-sans, system-ui, -apple-system, sans-serif);
+}
+
+.calendar {
+  background: var(--ds-color-background, hsl(0, 0%, 100%));
+  border: 1px solid var(--ds-color-border, hsl(240, 5.9%, 90%));
+  border-radius: var(--ds-radius-md, 0.5rem);
+  padding: 1rem;
+  min-width: 280px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.month-year {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ds-color-foreground, hsl(240, 10%, 3.9%));
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--ds-color-border, hsl(240, 5.9%, 90%));
+  border-radius: var(--ds-radius-md, 0.5rem);
+  background: transparent;
+  color: var(--ds-color-foreground, hsl(240, 10%, 3.9%));
+  cursor: pointer;
+  transition: opacity 0.2s;
+  opacity: 0.5;
+}
+
+.nav-button:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.nav-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--ds-color-muted-foreground, hsl(240, 3.8%, 46.1%));
+  padding: 0.25rem;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  border-radius: var(--ds-radius-md, 0.5rem);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--ds-color-foreground, hsl(240, 10%, 3.9%));
+}
+
+.calendar-day:not(.empty):hover:not(:disabled) {
+  background: var(--ds-color-accent, hsl(240, 4.8%, 95.9%));
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.today {
+  background: var(--ds-color-accent, hsl(240, 4.8%, 95.9%));
+  color: var(--ds-color-accent-foreground, hsl(240, 5.9%, 10%));
+}
+
+.calendar-day.selected {
+  background: var(--ds-color-primary, hsl(240, 5.9%, 10%));
+  color: var(--ds-color-primary-foreground, hsl(0, 0%, 98%));
+}
+
+.calendar-day.selected:hover {
+  background: var(--ds-color-primary, hsl(240, 5.9%, 10%));
+  color: var(--ds-color-primary-foreground, hsl(0, 0%, 98%));
+}
+
+.calendar-day:disabled {
+  color: var(--ds-color-muted-foreground, hsl(240, 3.8%, 46.1%));
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+:host(.disabled) .calendar {
+  opacity: 0.6;
+  pointer-events: none;
+}
