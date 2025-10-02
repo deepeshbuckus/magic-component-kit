@@ -169,7 +169,7 @@ const PayrollIntelligence = () => {
                     <Edit className="mr-2 h-4 w-4" />
                     Edit report
                   </Button>
-                  <Button className="flex-1">
+                  <Button variant="blue" className="flex-1">
                     <Eye className="mr-2 h-4 w-4" />
                     Run report
                   </Button>
