@@ -18,6 +18,10 @@ declare global {
   export namespace JSX {
     interface IntrinsicElements extends StencilToReact<LocalJSX.IntrinsicElements> {
       'ds-category-pill': LocalJSX.DsCategoryPill & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'ds-search-bar': LocalJSX.DsSearchBar & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'ds-input': LocalJSX.DsInput & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'ds-report-card': LocalJSX.DsReportCard & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'ds-button': LocalJSX.DsButton & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }

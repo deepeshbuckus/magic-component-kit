@@ -1,8 +1,5 @@
-import { Search, Send, Edit, Eye, DollarSign, Users, TrendingUp } from "lucide-react";
+import { Search, DollarSign, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 const reports = [
   {
@@ -38,6 +35,14 @@ const reports = [
 ];
 
 const PayrollIntelligence = () => {
+  const handleCategoryClick = (category: string) => {
+    console.log('Category clicked:', category);
+  };
+
+  const handleSearch = (event: any) => {
+    console.log('Search submitted:', event.detail);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -79,55 +84,50 @@ const PayrollIntelligence = () => {
 
             {/* Category Pills */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
-              <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
-                style={{ 
-                  backgroundColor: 'hsl(210, 100%, 95%)', 
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                  fontWeight: 500
-                }}
+              <ds-category-pill
+                color="hsl(210, 100%, 95%)"
+                textColor="hsl(210, 100%, 40%)"
+                border="1px solid hsl(210, 100%, 90%)"
+                onDsClick={() => handleCategoryClick('Payroll Insights')}
               >
-                <DollarSign className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
-                Payroll Insights
-              </Badge>
-              <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
-                style={{ 
-                  backgroundColor: 'hsl(210, 100%, 95%)', 
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                  fontWeight: 500
-                }}
+                <span slot="icon">
+                  <DollarSign className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
+                </span>
+                <span slot="text">Payroll Insights</span>
+              </ds-category-pill>
+              
+              <ds-category-pill
+                color="hsl(210, 100%, 95%)"
+                textColor="hsl(210, 100%, 40%)"
+                border="1px solid hsl(210, 100%, 90%)"
+                onDsClick={() => handleCategoryClick('Workforce Reports')}
               >
-                <Users className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
-                Workforce Reports
-              </Badge>
-              <Badge 
-                className="cursor-pointer px-4 py-2 text-sm flex items-center gap-2 rounded-full transition-all hover:opacity-90"
-                style={{ 
-                  backgroundColor: 'hsl(210, 100%, 95%)', 
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                  fontWeight: 500
-                }}
+                <span slot="icon">
+                  <Users className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
+                </span>
+                <span slot="text">Workforce Reports</span>
+              </ds-category-pill>
+              
+              <ds-category-pill
+                color="hsl(210, 100%, 95%)"
+                textColor="hsl(210, 100%, 40%)"
+                border="1px solid hsl(210, 100%, 90%)"
+                onDsClick={() => handleCategoryClick('Trend Analysis')}
               >
-                <TrendingUp className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
-                Trend Analysis
-              </Badge>
+                <span slot="icon">
+                  <TrendingUp className="h-4 w-4" style={{ color: 'hsl(210, 100%, 40%)' }} />
+                </span>
+                <span slot="text">Trend Analysis</span>
+              </ds-category-pill>
             </div>
 
             {/* Search Bar */}
             <div className="mx-auto max-w-2xl">
-              <div className="flex gap-2 rounded-lg border bg-background p-2 shadow-sm">
-                <Input
-                  placeholder="Ask for a custom payroll report"
-                  className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
-                <Button size="icon" className="shrink-0">
-                  <Send className="h-4 w-4" />
-                </Button>
-              </div>
+              <ds-search-bar
+                placeholder="Ask for a custom payroll report"
+                buttonLabel="Submit"
+                onDsSubmit={handleSearch}
+              />
             </div>
           </div>
         </div>
@@ -146,37 +146,32 @@ const PayrollIntelligence = () => {
           {/* Search Reports */}
           <div className="mb-6 max-w-md">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input placeholder="Search reports..." className="pl-9" />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground z-10" />
+              <ds-input
+                placeholder="Search reports..."
+                class="pl-9"
+              />
             </div>
           </div>
 
           {/* Reports Grid */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {reports.map((report, index) => (
-              <Card key={index} className="flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-lg">{report.title}</CardTitle>
-                  <CardDescription className="text-xs">
-                    Last run on {report.lastRun}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-sm text-muted-foreground">
-                    {report.description}
-                  </p>
-                </CardContent>
-                <CardFooter className="flex gap-2">
-                  <Button variant="outline" className="flex-1">
-                    <Edit className="mr-2 h-4 w-4" />
+              <ds-report-card
+                key={index}
+                title={report.title}
+                lastRun={report.lastRun}
+                description={report.description}
+              >
+                <div slot="actions" className="flex gap-2 w-full">
+                  <ds-button variant="outline" class="flex-1">
                     Edit report
-                  </Button>
-                  <Button className="flex-1">
-                    <Eye className="mr-2 h-4 w-4" />
+                  </ds-button>
+                  <ds-button variant="default" class="flex-1">
                     Run report
-                  </Button>
-                </CardFooter>
-              </Card>
+                  </ds-button>
+                </div>
+              </ds-report-card>
             ))}
           </div>
         </div>
