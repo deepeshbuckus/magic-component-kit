@@ -13,6 +13,10 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@design-system": path.resolve(__dirname, "./packages/web-components/dist/components"),
     },
+  },
+  optimizeDeps: {
+    include: ['@design-system/web-components'],
   },
 }));

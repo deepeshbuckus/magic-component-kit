@@ -1,6 +1,18 @@
-import { Search, Send, DollarSign, Users, TrendingUp, Edit, Eye } from "lucide-react";
+import { Search, DollarSign, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
+// Declare custom elements for TypeScript
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'ds-category-pill': any;
+      'ds-search-bar': any;
+      'ds-report-card': any;
+      'ds-button': any;
+    }
+  }
+}
 
 const reports = [
   {
@@ -75,54 +87,45 @@ const PayrollIntelligence = () => {
               employee profiles, and more.
             </p>
 
-            {/* Category Pills */}
+            {/* Category Pills using Web Components */}
             <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
-              <button
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
-                style={{
-                  backgroundColor: 'hsl(210, 100%, 95%)',
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                }}
+              <ds-category-pill
+                bg-color="hsl(210, 100%, 95%)"
+                text-color="hsl(210, 100%, 40%)"
               >
-                <DollarSign className="h-4 w-4" />
-                Payroll Insights
-              </button>
-              <button
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
-                style={{
-                  backgroundColor: 'hsl(210, 100%, 95%)',
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                }}
+                <span slot="icon">
+                  <DollarSign className="h-4 w-4" />
+                </span>
+                <span slot="text">Payroll Insights</span>
+              </ds-category-pill>
+              
+              <ds-category-pill
+                bg-color="hsl(210, 100%, 95%)"
+                text-color="hsl(210, 100%, 40%)"
               >
-                <Users className="h-4 w-4" />
-                Workforce Reports
-              </button>
-              <button
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all hover:opacity-90"
-                style={{
-                  backgroundColor: 'hsl(210, 100%, 95%)',
-                  color: 'hsl(210, 100%, 40%)',
-                  border: '1px solid hsl(210, 100%, 90%)',
-                }}
+                <span slot="icon">
+                  <Users className="h-4 w-4" />
+                </span>
+                <span slot="text">Workforce Reports</span>
+              </ds-category-pill>
+              
+              <ds-category-pill
+                bg-color="hsl(210, 100%, 95%)"
+                text-color="hsl(210, 100%, 40%)"
               >
-                <TrendingUp className="h-4 w-4" />
-                Trend Analysis
-              </button>
+                <span slot="icon">
+                  <TrendingUp className="h-4 w-4" />
+                </span>
+                <span slot="text">Trend Analysis</span>
+              </ds-category-pill>
             </div>
 
-            {/* Search Bar */}
+            {/* Search Bar using Web Component */}
             <div className="mx-auto max-w-2xl">
-              <div className="flex gap-2 rounded-lg border bg-background p-2 shadow-sm">
-                <Input
-                  placeholder="Ask for a custom payroll report"
-                  className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-                />
-                <Button size="icon" className="shrink-0">
-                  <Send className="h-4 w-4" />
-                </Button>
-              </div>
+              <ds-search-bar
+                placeholder="Ask for a custom payroll report"
+                button-label="Submit"
+              />
             </div>
           </div>
         </div>
@@ -146,35 +149,24 @@ const PayrollIntelligence = () => {
             </div>
           </div>
 
-          {/* Reports Grid */}
+          {/* Reports Grid using Web Components */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {reports.map((report, index) => (
-              <article
+              <ds-report-card
                 key={index}
-                className="flex flex-col rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-md"
+                title={report.title}
+                last-run={report.lastRun}
+                description={report.description}
               >
-                <div className="flex flex-col gap-1.5 p-6">
-                  <h3 className="text-lg font-semibold">{report.title}</h3>
-                  <p className="text-xs text-muted-foreground">
-                    Last run on {report.lastRun}
-                  </p>
-                </div>
-                <div className="flex-1 px-6 pb-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {report.description}
-                  </p>
-                </div>
-                <div className="flex gap-2 px-6 pb-6">
-                  <Button variant="outline" className="flex-1">
-                    <Edit className="mr-2 h-4 w-4" />
+                <div slot="actions" style={{ display: 'flex', gap: '0.5rem' }}>
+                  <ds-button variant="outline" style={{ flex: 1 }}>
                     Edit report
-                  </Button>
-                  <Button variant="blue" className="flex-1">
-                    <Eye className="mr-2 h-4 w-4" />
+                  </ds-button>
+                  <ds-button variant="default" style={{ flex: 1, backgroundColor: 'hsl(var(--blue))', color: 'hsl(var(--blue-foreground))' }}>
                     Run report
-                  </Button>
+                  </ds-button>
                 </div>
-              </article>
+              </ds-report-card>
             ))}
           </div>
         </div>
