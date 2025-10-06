@@ -6,7 +6,7 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class DsReportCard {
-  @Prop() title: string;
+  @Prop() reportTitle: string;
   @Prop() lastRun: string;
   @Prop() description: string;
 
@@ -28,7 +28,7 @@ export class DsReportCard {
     return (
       <article class="ds-report-card" role="article" style={style}>
         <div class="ds-report-card__header">
-          <h3 class="ds-report-card__title">{this.title}</h3>
+          <h3 class="ds-report-card__title">{this.reportTitle}</h3>
           {this.lastRun && (
             <p class="ds-report-card__meta">Last run on {this.lastRun}</p>
           )}

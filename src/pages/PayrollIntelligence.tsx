@@ -154,7 +154,7 @@ const PayrollIntelligence = () => {
             {reports.map((report, index) => (
               <ds-report-card
                 key={index}
-                title={report.title}
+                report-title={report.title}
                 last-run={report.lastRun}
                 description={report.description}
               >

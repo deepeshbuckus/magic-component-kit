@@ -13,12 +13,10 @@ export class DsCalendar {
 
   @Event() dsDateSelect: EventEmitter<string>;
 
-  private currentDate: Date = new Date();
   private viewDate: Date = new Date();
 
   componentWillLoad() {
     if (this.selectedDate) {
-      this.currentDate = new Date(this.selectedDate);
       this.viewDate = new Date(this.selectedDate);
     }
   }
