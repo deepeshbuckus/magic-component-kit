@@ -15,10 +15,16 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
-    
+
     return mergeConfig(config, {
       build: {
         outDir: 'dist-vite'
+      },
+      resolve: {
+        alias: {
+          'storybook/preview-api': '@storybook/preview-api',
+          'storybook/client-logger': '@storybook/client-logger'
+        }
       }
     });
   },
