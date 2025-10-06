@@ -44,7 +44,7 @@
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-links": "^8.6.14",
     "@storybook/blocks": "^8.6.14",
-    "@storybook/web-components": "^9.1.9",
+    "@storybook/web-components": "^8.6.14",
     "@storybook/web-components-vite": "^8.6.14",
     "@tanstack/react-query": "^5.83.0",
     "class-variance-authority": "^0.7.1",
