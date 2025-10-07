@@ -51,7 +51,7 @@
   --pp-border-radius-xs: 2px;
   --pp-border-radius-sm: 4px;
   --pp-border-radius: 1em;
-  --pp-border-radius-lg: 8px;
+  --pp-border-radius-lg: 12px;
   --pp-border-radius-xl: 10em;
 
   /* Shadows */
@@ -113,24 +113,24 @@ button {
 
 /* Size variants */
 .small {
-  padding: var(--pp-small-padding) var(--pp-padding);
+  padding: 1em 1.5em;
   font-size: var(--pp-font-size-xs);
 }
 
 .medium {
-  padding: var(--pp-padding) var(--pp-large-padding);
+  padding: 1em 1.5em;
   font-size: var(--pp-font-size-base);
 }
 
 .large {
-  padding: var(--pp-large-padding) calc(var(--pp-large-padding) * 1.5);
+  padding: 1em 1.5em;
   font-size: var(--pp-font-size-lg);
 }
 
 .icon-only {
-  width: 3em;
-  min-width: 3em;
-  height: 3em;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   padding: 0;
 }
 
