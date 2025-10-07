@@ -84,10 +84,10 @@ button {
   font-family: inherit;
   font-size: var(--pp-font-size-base);
   font-weight: var(--pp-font-weight-semi-bold);
-  line-height: 1em;
+  line-height: var(--pp-line-height);
   border: 1px solid;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   white-space: nowrap;
   user-select: none;
   box-shadow: var(--pp-box-shadow);
@@ -98,7 +98,7 @@ button {
   }
 
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.65;
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -108,23 +108,23 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.375em;
+  gap: var(--pp-small-gap);
 }
 
 /* Size variants */
 .small {
-  padding: 0.375em 0.75em;
+  padding: var(--pp-small-padding) var(--pp-padding);
   font-size: var(--pp-font-size-xs);
 }
 
 .medium {
-  padding: 0.5em 1em;
+  padding: var(--pp-small-padding) var(--pp-padding);
   font-size: var(--pp-font-size-base);
 }
 
 .large {
-  padding: 0.625em 1em;
-  font-size: var(--pp-font-size-h5);
+  padding: var(--pp-small-padding) var(--pp-padding);
+  font-size: var(--pp-font-size-lg);
 }
 
 .icon-only {
@@ -148,7 +148,7 @@ button {
 
 /* Appearance variants */
 .box {
-  border-radius: var(--pp-border-radius);
+  border-radius: var(--pp-border-radius-lg);
 }
 
 .pill {
