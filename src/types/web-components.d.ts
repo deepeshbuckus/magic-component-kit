@@ -29,6 +29,8 @@ declare global {
       'pp-dialog-title': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-dialog-description': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-slider': LocalJSX.PpSlider & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dropdown': LocalJSX.PpDropdown & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dropdown-item': LocalJSX.PpDropdownItem & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
