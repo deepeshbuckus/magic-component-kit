@@ -28,6 +28,7 @@ declare global {
       'pp-dialog-footer': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-dialog-title': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-dialog-description': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-slider': LocalJSX.PpSlider & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
