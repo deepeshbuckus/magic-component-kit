@@ -1,4 +1,4 @@
-import { Component, Prop, h, Event, EventEmitter, Host, State, Listen } from '@stencil/core';
+import { Component, Prop, h, Event, EventEmitter, Host, Listen, Watch } from '@stencil/core';
 
 @Component({
   tag: 'pp-dialog',
@@ -6,33 +6,26 @@ import { Component, Prop, h, Event, EventEmitter, Host, State, Listen } from '@s
   shadow: true,
 })
 export class PpDialog {
-  @Prop({ reflect: true }) open: boolean = false;
-  @Prop() size: 'small' | 'medium' | 'large' = 'medium';
-  @Prop() theme: 'primary' | 'secondary' | 'warning' | 'success' | 'danger' | 'light' = 'primary';
+  @Prop({ reflect: true, mutable: true }) open: boolean = false;
+  @Prop({ reflect: true }) size: 'small' | 'medium' | 'large' = 'medium';
+  @Prop({ reflect: true }) theme: 'primary' | 'secondary' | 'warning' | 'success' | 'danger' | 'light' = 'primary';
 
   @Event({ eventName: 'dialog-opened' }) dialogOpened: EventEmitter<void>;
   @Event({ eventName: 'dialog-closed' }) dialogClosed: EventEmitter<void>;
   @Event({ eventName: 'overlay-clicked' }) overlayClicked: EventEmitter<void>;
 
-  @State() isVisible: boolean = false;
-
-  componentWillLoad() {
-    this.isVisible = this.open;
-  }
-
-  componentDidUpdate() {
-    if (this.open && !this.isVisible) {
-      this.isVisible = true;
+  @Watch('open')
+  watchOpenHandler(newValue: boolean, oldValue: boolean) {
+    if (newValue && !oldValue) {
       this.dialogOpened.emit();
-    } else if (!this.open && this.isVisible) {
-      this.isVisible = false;
+    } else if (!newValue && oldValue) {
       this.dialogClosed.emit();
     }
   }
 
   @Listen('keydown', { target: 'window' })
   handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'Escape' && this.isVisible) {
+    if (event.key === 'Escape' && this.open) {
       this.closeDialog();
     }
   }
@@ -45,12 +38,11 @@ export class PpDialog {
   };
 
   private closeDialog = () => {
-    this.isVisible = false;
-    this.dialogClosed.emit();
+    this.open = false;
   };
 
   render() {
-    if (!this.isVisible) {
+    if (!this.open) {
       return null;
     }
 
