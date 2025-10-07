@@ -128,3 +128,14 @@ export const Combined = {
     </div>
   `,
 };
+
+export const SaveButtonExample = {
+  render: () => `
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+      <pp-button button-theme="success">💾 Save</pp-button>
+      <pp-button button-theme="success" button-appearance="pill">💾 Save Changes</pp-button>
+      <pp-button button-theme="primary" button-size="large">💾 Save & Continue</pp-button>
+      <pp-button button-theme="success" alternative-style>💾 Save Draft</pp-button>
+    </div>
+  `,
+};
