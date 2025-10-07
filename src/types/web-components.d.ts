@@ -23,6 +23,11 @@ declare global {
       'ds-report-card': LocalJSX.DsReportCard & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'ds-button': LocalJSX.DsButton & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-button': LocalJSX.PpButton & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dialog': LocalJSX.PpDialog & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dialog-header': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dialog-footer': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dialog-title': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-dialog-description': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }

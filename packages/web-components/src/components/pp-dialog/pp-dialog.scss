@@ -1,0 +1,133 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+:host {
+  .dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dialog-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--pp-white);
+    border-radius: var(--pp-border-radius-lg);
+    box-shadow: var(--pp-box-shadow-lg);
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    &.small {
+      max-width: 400px;
+    }
+
+    &.medium {
+      max-width: 600px;
+    }
+
+    &.large {
+      max-width: 800px;
+    }
+
+    &.primary {
+      border-top: 4px solid var(--pp-primary);
+    }
+
+    &.secondary {
+      border-top: 4px solid var(--pp-secondary);
+    }
+
+    &.warning {
+      border-top: 4px solid var(--pp-warning);
+    }
+
+    &.success {
+      border-top: 4px solid var(--pp-success);
+    }
+
+    &.danger {
+      border-top: 4px solid var(--pp-danger);
+    }
+
+    &.light {
+      border-top: 4px solid var(--pp-light);
+    }
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--pp-gray);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    z-index: 1;
+
+    &:hover {
+      background: var(--pp-light);
+      color: var(--pp-dark);
+    }
+
+    &:focus {
+      outline: 2px solid var(--pp-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  .dialog-content {
+    padding: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .dialog-container {
+      width: 95%;
+      max-height: 95vh;
+    }
+
+    .dialog-content {
+      padding: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    .dialog-close {
+      top: 0.75rem;
+      right: 0.75rem;
+    }
+  }
+}

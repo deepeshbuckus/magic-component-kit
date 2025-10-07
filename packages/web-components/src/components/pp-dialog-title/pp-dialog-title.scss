@@ -1,0 +1,11 @@
+:host {
+  display: block;
+
+  .dialog-title {
+    font-size: var(--pp-font-size-lg);
+    font-weight: var(--pp-font-weight-semi-bold);
+    color: var(--pp-font-color);
+    margin: 0 0 var(--pp-small-gap) 0;
+    line-height: 1.4;
+  }
+}

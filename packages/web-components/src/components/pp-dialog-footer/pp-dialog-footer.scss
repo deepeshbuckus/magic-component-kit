@@ -1,0 +1,15 @@
+:host {
+  display: block;
+
+  .dialog-footer {
+    display: flex;
+    gap: var(--pp-small-gap);
+    margin-top: 1.5rem;
+    flex-direction: column;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}

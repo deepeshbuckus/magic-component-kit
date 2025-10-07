@@ -1,0 +1,10 @@
+:host {
+  display: block;
+
+  .dialog-description {
+    font-size: var(--pp-font-size-base);
+    color: var(--pp-gray);
+    margin: 0;
+    line-height: 1.6;
+  }
+}
