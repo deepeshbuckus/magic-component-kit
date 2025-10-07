@@ -1,5 +1,38 @@
 /* Design System Tokens - Based on your existing design system */
 :root {
+  /* PP Button Colors */
+  --pp-primary: #10327c;
+  --pp-secondary: #6c757d;
+  --pp-success: #28a745;
+  --pp-info: #007bff;
+  --pp-warning: #ffc107;
+  --pp-danger: #dc3545;
+  --pp-white: #ffffff;
+  --pp-light: #f8f9fa;
+  --pp-gray: #c5c5c5;
+  --pp-dark: #343a40;
+  --pp-black: #000000;
+  --pp-background: #f6f7fb;
+  --pp-font-color: #212529;
+
+  /* Fonts */
+  --pp-font-size-base: 0.9rem;
+  --pp-font-size-lg: 1.125rem;
+  --pp-font-size-xs: 0.75rem;
+  --pp-font-weight-semi-bold: 500;
+
+  /* Spacing */
+  --pp-small-gap: 0.5em;
+  --pp-gap: 1em;
+
+  /* Border radius */
+  --pp-border-radius-lg: 8px;
+  --pp-border-radius-xl: 10em;
+
+  /* Shadows */
+  --pp-box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.14);
+  --pp-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
   /* Colors - Light Mode */
   --ds-color-background: hsl(0, 0%, 100%);
   --ds-color-foreground: hsl(222.2, 84%, 4.9%);
