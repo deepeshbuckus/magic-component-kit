@@ -85,7 +85,7 @@
     font-family: inherit;
     font-weight: var(--pp-font-weight-semi-bold);
     line-height: 1em;
-    border-radius: var(--pp-border-radius-lg);
+    border-radius: var(--pp-border-radius);
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease-in-out;
     cursor: pointer;
     box-shadow: var(--pp-box-shadow);
@@ -132,13 +132,13 @@
     }
 
     &.large {
-      font-size: var(--pp-font-size-lg);
-      padding: 0.625em 1.25em;
+      font-size: var(--pp-font-size-base);
+      padding: 0.55em 1.1em;
       
       &.icon-only {
-        width: 3em;
-        min-width: 3em;
-        height: 3em;
+        width: 2.75em;
+        min-width: 2.75em;
+        height: 2.75em;
       }
     }
 
