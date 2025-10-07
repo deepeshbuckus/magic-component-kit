@@ -5,6 +5,15 @@ const meta: Meta = {
   title: 'Components/PP Dialog',
   component: 'pp-dialog',
   tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      story: {
+        inline: false,
+        iframeHeight: 500,
+      },
+    },
+  },
   argTypes: {
     open: { control: 'boolean' },
     size: {
