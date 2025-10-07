@@ -84,12 +84,13 @@ button {
   font-family: inherit;
   font-size: var(--pp-font-size-base);
   font-weight: var(--pp-font-weight-semi-bold);
-  line-height: var(--pp-line-height);
-  border: 1px solid transparent;
+  line-height: 1em;
+  border: 1px solid;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease-in-out;
   white-space: nowrap;
   user-select: none;
+  box-shadow: var(--pp-box-shadow);
   
   &:focus {
     outline: none;
@@ -97,7 +98,7 @@ button {
   }
 
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.7;
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -127,21 +128,15 @@ button {
 }
 
 .icon-only {
-  padding: var(--pp-padding);
-  aspect-ratio: 1;
-  
-  &.small {
-    padding: var(--pp-small-padding);
-  }
-  
-  &.large {
-    padding: var(--pp-large-padding);
-  }
+  width: 3em;
+  min-width: 3em;
+  height: 3em;
+  padding: 0;
 }
 
 /* Appearance variants */
 .box {
-  border-radius: var(--pp-border-radius-sm);
+  border-radius: var(--pp-border-radius-lg);
 }
 
 .pill {
@@ -155,18 +150,20 @@ button {
   border-color: var(--pp-primary);
 
   &:hover:not(:disabled) {
-    background-color: darken(#10327c, 10%);
-    border-color: darken(#10327c, 10%);
+    background-color: var(--pp-white);
+    color: var(--pp-primary);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
-    background-color: var(--pp-primary-lighter);
+    background-color: var(--pp-white);
     color: var(--pp-primary);
     border-color: var(--pp-primary);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-primary);
       color: var(--pp-white);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
@@ -177,18 +174,20 @@ button {
   border-color: var(--pp-secondary);
 
   &:hover:not(:disabled) {
-    background-color: darken(#6c757d, 10%);
-    border-color: darken(#6c757d, 10%);
+    background-color: var(--pp-white);
+    color: var(--pp-secondary);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
-    background-color: var(--pp-secondary-lighter);
+    background-color: var(--pp-white);
     color: var(--pp-secondary);
     border-color: var(--pp-secondary);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-secondary);
       color: var(--pp-white);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
@@ -199,40 +198,44 @@ button {
   border-color: var(--pp-success);
 
   &:hover:not(:disabled) {
-    background-color: darken(#28a745, 10%);
-    border-color: darken(#28a745, 10%);
+    background-color: var(--pp-white);
+    color: var(--pp-success);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
-    background-color: var(--pp-success-lighter);
+    background-color: var(--pp-white);
     color: var(--pp-success);
     border-color: var(--pp-success);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-success);
       color: var(--pp-white);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
 
 .warning {
   background-color: var(--pp-warning);
-  color: var(--pp-black);
+  color: var(--pp-white);
   border-color: var(--pp-warning);
 
   &:hover:not(:disabled) {
-    background-color: darken(#ffc107, 10%);
-    border-color: darken(#ffc107, 10%);
+    background-color: var(--pp-white);
+    color: var(--pp-warning);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
-    background-color: var(--pp-warning-lighter);
+    background-color: var(--pp-white);
     color: var(--pp-warning);
     border-color: var(--pp-warning);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-warning);
-      color: var(--pp-black);
+      color: var(--pp-white);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
@@ -243,39 +246,44 @@ button {
   border-color: var(--pp-danger);
 
   &:hover:not(:disabled) {
-    background-color: darken(#dc3545, 10%);
-    border-color: darken(#dc3545, 10%);
+    background-color: var(--pp-white);
+    color: var(--pp-danger);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
-    background-color: var(--pp-danger-lighter);
+    background-color: var(--pp-white);
     color: var(--pp-danger);
     border-color: var(--pp-danger);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-danger);
       color: var(--pp-white);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
 
 .light {
   background-color: var(--pp-light);
-  color: var(--pp-font-color);
-  border-color: var(--pp-gray);
+  color: var(--pp-black);
+  border-color: var(--pp-light);
 
   &:hover:not(:disabled) {
-    background-color: darken(#f8f9fa, 5%);
-    border-color: darken(#c5c5c5, 10%);
+    background-color: var(--pp-white);
+    border-color: var(--pp-white);
+    box-shadow: var(--pp-box-shadow-lg);
   }
 
   &.alternate {
     background-color: var(--pp-white);
-    color: var(--pp-font-color);
-    border-color: var(--pp-gray);
+    color: var(--pp-black);
+    border-color: var(--pp-white);
 
     &:hover:not(:disabled) {
       background-color: var(--pp-light);
+      color: var(--pp-black);
+      box-shadow: var(--pp-box-shadow-lg);
     }
   }
 }
