@@ -18,8 +18,8 @@ export class PpCard {
 
   render() {
     return (
-      <Host>
-        <div class={`pp-card pp-card--${this.cardTheme} ${this.hoverable ? 'pp-card--hoverable' : ''}`}>
+      <Host class={this.hoverable ? 'hoverable' : ''}>
+        <div class={`pp-card pp-card--${this.cardTheme}`}>
           <slot></slot>
         </div>
       </Host>

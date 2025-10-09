@@ -2,6 +2,16 @@
   display: block;
 }
 
+:host(.hoverable) .pp-card {
+  cursor: pointer;
+  will-change: transform;
+  
+  &:hover {
+    box-shadow: var(--pp-box-shadow-lg);
+    transform: translateY(-4px);
+  }
+}
+
 .pp-card {
   display: flex;
   flex-direction: column;
@@ -10,17 +20,8 @@
   background: var(--pp-white);
   color: var(--pp-font-color);
   box-shadow: var(--pp-box-shadow);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-
-  &--hoverable {
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: var(--pp-box-shadow-lg);
-      transform: translateY(-2px);
-    }
-  }
 
   // Theme variants
   &--default {
