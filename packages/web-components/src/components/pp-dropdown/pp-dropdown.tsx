@@ -1,4 +1,4 @@
-import { Component, Prop, h, State, Host, Event, EventEmitter, Listen, Element } from '@stencil/core';
+import { Component, Prop, h, Host, Event, EventEmitter, Listen, Element } from '@stencil/core';
 
 @Component({
   tag: 'pp-dropdown',
@@ -14,18 +14,21 @@ export class PpDropdown {
   @Prop({ attribute: 'placement' }) placement: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
   @Prop({ attribute: 'disabled' }) disabled: boolean = false;
 
-  @State() private selectedValue: string = '';
-
   @Event({ eventName: 'dropdown-toggle' }) dropdownToggle: EventEmitter<boolean>;
   @Event({ eventName: 'dropdown-select' }) dropdownSelect: EventEmitter<{ value: string; label: string }>;
-
-  private dropdownRef: HTMLDivElement;
 
   @Listen('click', { target: 'window' })
   handleClickOutside(event: MouseEvent) {
     if (this.open && !this.el.shadowRoot.contains(event.target as Node)) {
       this.closeDropdown();
     }
+  }
+
+  @Listen('item-click')
+  handleItemClick(event: CustomEvent<{ value: string; label: string }>) {
+    event.stopPropagation();
+    this.dropdownSelect.emit(event.detail);
+    this.closeDropdown();
   }
 
   private toggleDropdown = () => {
@@ -38,13 +41,6 @@ export class PpDropdown {
   private closeDropdown = () => {
     this.open = false;
     this.dropdownToggle.emit(false);
-  };
-
-  private handleItemClick = (event: Event, value: string, label: string) => {
-    event.stopPropagation();
-    this.selectedValue = value;
-    this.dropdownSelect.emit({ value, label });
-    this.closeDropdown();
   };
 
   render() {
@@ -87,7 +83,6 @@ export class PpDropdown {
         {this.open && (
           <div 
             class="dropdown-menu"
-            ref={(el) => this.dropdownRef = el}
             role="menu"
           >
             <slot />
