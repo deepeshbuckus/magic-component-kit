@@ -31,6 +31,12 @@ declare global {
       'pp-slider': LocalJSX.PpSlider & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-dropdown': LocalJSX.PpDropdown & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
       'pp-dropdown-item': LocalJSX.PpDropdownItem & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card': LocalJSX.PpCard & DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card-header': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card-title': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card-description': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card-content': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
+      'pp-card-footer': DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
