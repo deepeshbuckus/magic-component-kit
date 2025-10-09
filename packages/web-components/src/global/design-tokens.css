@@ -1,37 +1,80 @@
-/* Design System Tokens - Based on your existing design system */
+/* Design System Tokens - Based on Dayforce design system */
 :root {
-  /* PP Button Colors */
-  --pp-primary: #10327c;
-  --pp-secondary: #6c757d;
-  --pp-success: #28a745;
-  --pp-info: #007bff;
-  --pp-warning: #ffc107;
-  --pp-danger: #dc3545;
-  --pp-white: #ffffff;
-  --pp-light: #f8f9fa;
-  --pp-gray: #c5c5c5;
-  --pp-dark: #343a40;
-  --pp-black: #000000;
-  --pp-background: #f6f7fb;
-  --pp-font-color: #212529;
+  /* PP Colors */
+  --pp-primary: #3067db;           /* Dayforce interactive primary */
+  --pp-secondary: #525252;         /* Dayforce neutral 600 */
+  --pp-success: #098661;           /* Dayforce success default */
+  --pp-info: #6299f4;             /* Dayforce blue 300 */
+  --pp-warning: #ffc303;           /* Dayforce warning default */
+  --pp-danger: #cc3444;            /* Dayforce error default */
+  --pp-white: #ffffff;             /* Dayforce white */
+  --pp-light: #f5f5f5;            /* Dayforce neutral 100 */
+  --pp-gray: #d1d1d1;             /* Dayforce neutral 300 */
+  --pp-dark: #3d3d3d;             /* Dayforce neutral 700 */
+  --pp-black: #000000;            /* Dayforce black */
+  --pp-background: #fafafa;        /* Dayforce neutral 50 */
+  --pp-font-color: #1f1f1f;       /* Dayforce neutral 800 */
+  --pp-primary-lighter: #ebf8ff;   /* Dayforce primary decorative */
+  --pp-secondary-lighter: #f5f5f5; /* Dayforce neutral 100 */
+  --pp-success-lighter: #e0fff4;   /* Dayforce success decorative */
+  --pp-info-lighter: #ebf8ff;      /* Dayforce blue 50 */
+  --pp-warning-lighter: #fffcdb;   /* Dayforce warning decorative */
+  --pp-danger-lighter: #ffedef;    /* Dayforce error decorative */
 
   /* Fonts */
   --pp-font-size-base: 0.9rem;
+  --pp-font-size-h1: 1.35rem;
+  --pp-font-size-h2: 1.26rem;
+  --pp-font-size-h3: 1.17rem;
+  --pp-font-size-h4: 1.08rem;
+  --pp-font-size-h5: 0.99rem;
+  --pp-font-size-h6: 0.9rem;
   --pp-font-size-lg: 1.125rem;
   --pp-font-size-xs: 0.75rem;
+  --pp-font-size-xxs: 0.625rem;
+  --pp-font-weight-bold: 700;
   --pp-font-weight-semi-bold: 500;
+  --pp-line-height: 1.3;
 
   /* Spacing */
+  --pp-viewport-padding: 1em;
+  --pp-gutter: 15px;
+  --pp-small-padding: 0.5em;
+  --pp-padding: 1em;
+  --pp-large-padding: 1.5em;
   --pp-small-gap: 0.5em;
   --pp-gap: 1em;
+  --pp-large-gap: 1.5em;
+  --pp-small-margin: 0.5em;
+  --pp-margin: 1em;
+  --pp-large-margin: 1.5em;
 
   /* Border radius */
+  --pp-border-radius-xs: 2px;
+  --pp-border-radius-sm: 4px;
+  --pp-border-radius: 1em;
   --pp-border-radius-lg: 8px;
   --pp-border-radius-xl: 10em;
 
   /* Shadows */
+  --pp-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --pp-box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.14);
   --pp-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+  /* Viewport sizes */
+  --pp-viewport-mobile: 100%;
+  --pp-viewport-tablet: 720px;
+  --pp-viewport-desktop: 960px;
+  --pp-viewport-desktop-hd: 1140px;
+
+  /* Z-index */
+  --pp-zindex-dropdown: 1000;
+  --pp-zindex-sticky: 1020;
+  --pp-zindex-fixed: 1030;
+  --pp-zindex-modal-backdrop: 1040;
+  --pp-zindex-modal: 1050;
+  --pp-zindex-popover: 1060;
+  --pp-zindex-tooltip: 1070;
 
   /* Colors - Light Mode */
   --ds-color-background: hsl(0, 0%, 100%);
